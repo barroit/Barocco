@@ -1,0 +1,33 @@
+{
+  "name": "dbot",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "prestart-bot": "npm run build",
+    "predeploy-commands": "npm run build",
+    "predestory-commands": "npm run build",
+    "build": "tsc && tsc-alias",
+    "start-bot": "node -r dotenv/config ./dist/index.js",
+    "deploy-commands": "node -r dotenv/config dist/deploy/RegisterCommands.js",
+    "destory-commands": "node -r dotenv/config dist/deploy/DestoryCommands.js"
+  },
+  "keywords": [],
+  "author": "barroit",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/voice": "^0.16.0",
+    "discord.js": "^14.12.1",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.5.0",
+    "@typescript-eslint/parser": "^6.4.0",
+    "eslint": "^8.47.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "tsc-alias": "^1.8.7",
+    "typescript": "^5.1.6"
+  },
+  "engines": {
+    "node": ">=20.5.1"
+  }
+}
